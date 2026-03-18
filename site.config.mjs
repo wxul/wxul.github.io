@@ -1,7 +1,7 @@
 const rawSiteUrl = (process.env.SITE_URL ?? '').trim();
 const siteUrl = rawSiteUrl ? rawSiteUrl.replace(/\/+$/, '') : '';
 const hasSiteUrl = siteUrl.length > 0;
-const fallbackSiteUrl = 'https://wxul.github.io';
+const fallbackSiteUrl = 'https://wxul.top';
 
 if (!hasSiteUrl && process.env.NODE_ENV === 'production') {
   console.warn(
@@ -11,11 +11,11 @@ if (!hasSiteUrl && process.env.NODE_ENV === 'production') {
 
 export const site = {
   url: hasSiteUrl ? siteUrl : fallbackSiteUrl,
-  title: 'Tech Blog - Albert',
-  brandTitle: 'Tech Blog',
+  title: "Albert's Tech Blog",
+  brandTitle: "Albert's Blog",
   author: 'Albert',
   authorAvatar: 'author/avatar.webp',
-  description: 'A tech blog about web development, programming, and software engineering.',
+  description: 'Albert 的个人技术博客，分享 AI 前沿资讯、前后端全栈开发实践与技术思考。',
 };
 
 export const PAGE_SIZE_ARCHIVE = 12;

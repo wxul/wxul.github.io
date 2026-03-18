@@ -7,11 +7,11 @@ const {
   excerpt,
   date,
   tag,
-  badge = '随笔',
+  badge = '文章',
   slug = ''
 } = Astro.props;
 
-const displayBadge = badge?.trim() ? badge : '随笔';
+const displayBadge = badge?.trim() ? badge : '文章';
 ---
 
 <a class="list-item list-item--link" href={href} data-entry-item data-slug={slug || undefined}>

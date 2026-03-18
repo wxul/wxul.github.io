@@ -24,7 +24,7 @@
 
 - 双栏布局（侧栏导航 + 内容区）
 - 移动端适配
-- 内容集合：随笔 / 絮语 / 小记（归档为目录视图）
+- 内容集合：文章 / 絮语 / 小记（归档为目录视图）
 - 内置本地 Theme Console（/admin）：开发环境下**可视化管理站点配置**，fork / clone 后可快速完成站点接管
 - 絮语草稿生成器：/bits 页面一键生成 Markdown（复制/下载），支持多图与自动读取尺寸
 - RSS：默认归档订阅 + 分栏订阅
@@ -180,7 +180,7 @@ npm run dev
 ### 内容与路由
 
 内容集合（Content Collections）：
-- 随笔：位于 `src/content/essay` 目录
+- 文章：位于 `src/content/essay` 目录
 - 絮语：位于 `src/content/bits` 目录
 - 小记：位于 `src/content/memo/index.md`
 - 归档：由随笔集合按 `archive` 字段生成目录视图
@@ -199,7 +199,7 @@ npm run dev
 
 ### 核心字段（Frontmatter）
 
-随笔：
+文章：
 ```yaml
 title: My Post
 date: 2026-01-01

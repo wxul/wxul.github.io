@@ -41,7 +41,7 @@ const prevHref = currentPage === 2
   ? withBase('/essay/')
   : withBase(`/essay/page/${currentPage - 1}/`);
 const nextHref = currentPage < totalPages ? withBase(`/essay/page/${currentPage + 1}/`) : null;
-const pageTitleText = page.essay.title || '随笔';
+const pageTitleText = page.essay.title || '文章';
 const pageTitle = `${pageTitleText} · 第 ${currentPage} 页`;
 const subtitleText = joinPageSubtitleText(
   page.essay.subtitle,

@@ -50,13 +50,13 @@ jobs:
 
       - name: Build with SITE_URL
         env:
-          SITE_URL: https://wxul.github.io
+          SITE_URL: https://wxul.top
         run: pnpm run build
 
       - name: Verify production artifacts
         shell: bash
         env:
-          SITE_URL: https://wxul.github.io
+          SITE_URL: https://wxul.top
         run: |
           set -euo pipefail
 

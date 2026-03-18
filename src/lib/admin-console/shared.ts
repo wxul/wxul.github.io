@@ -46,7 +46,7 @@ export const ADMIN_HOME_INTRO_LINK_LIMIT = 2;
 export const ADMIN_HOME_INTRO_LINK_KEY_SET: ReadonlySet<HomeIntroLinkKey> = new Set(ADMIN_HOME_INTRO_LINK_KEYS);
 export const ADMIN_HOME_INTRO_LINK_OPTIONS = [
   { id: 'archive', label: '归档', href: '/archive/' },
-  { id: 'essay', label: '随笔', href: '/essay/' },
+  { id: 'essay', label: '文章', href: '/essay/' },
   { id: 'bits', label: '絮语', href: '/bits/' },
   { id: 'memo', label: '小记', href: '/memo/' },
   { id: 'about', label: '关于', href: '/about/' }

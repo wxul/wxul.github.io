@@ -15,8 +15,8 @@ export async function GET(context) {
   const visibleEssays = essays.filter((entry) => !isReservedSlug(entry.data.slug ?? entry.id));
 
   return rss({
-    title: `${settings.site.title} · 随笔`,
-    description: '随笔与杂记更新',
+    title: `${settings.site.title} · 文章`,
+    description: '文章更新',
     site: context.site,
     items: visibleEssays.map((entry) => ({
       title: entry.data.title,

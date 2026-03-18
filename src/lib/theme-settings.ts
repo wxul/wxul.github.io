@@ -241,9 +241,9 @@ export interface ThemeSettingsEditablePayload {
 const SETTINGS_DIR = join(process.cwd(), 'src', 'data', 'settings');
 
 const LEGACY_INTRO_LEAD =
-  '这是一个开源写作主题与示例内容库:包含 随笔/essay、小记/memo、归档/archive 与 絮语/bits，使用与配置请见 README 。';
+  '这是一个开源写作主题与示例内容库:包含 文章/essay、小记/memo、归档/archive 与 絮语/bits，使用与配置请见 README 。';
 const LEGACY_INTRO_MORE = '更多文章请访问';
-const LEGACY_ESSAY_TITLE = '随笔';
+const LEGACY_ESSAY_TITLE = '文章';
 const LEGACY_ARCHIVE_TITLE = '归档';
 const LEGACY_ESSAY_SUBTITLE = '随笔与杂记';
 const LEGACY_BITS_TITLE = '絮语';
@@ -267,7 +267,7 @@ const LEGACY_SOCIAL_LINKS: SiteSocialLinks = {
   resolvedSocialItems: []
 };
 const LEGACY_NAV: SidebarNavItem[] = [
-  { id: 'essay', label: '随笔', ornament: ADMIN_NAV_ORNAMENT_DEFAULT, visible: true, order: 1 },
+  { id: 'essay', label: '文章', ornament: ADMIN_NAV_ORNAMENT_DEFAULT, visible: true, order: 1 },
   { id: 'bits', label: '絮语', ornament: ADMIN_NAV_ORNAMENT_DEFAULT, visible: true, order: 2 },
   { id: 'memo', label: '小记', ornament: ADMIN_NAV_ORNAMENT_DEFAULT, visible: true, order: 3 },
   { id: 'archive', label: '归档', ornament: ADMIN_NAV_ORNAMENT_DEFAULT, visible: true, order: 4 },

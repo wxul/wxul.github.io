@@ -1,10 +1,10 @@
 {
-  "brandTitle": "Whono",
-  "quote": "A minimal Astro theme\nfor essays, notes, and docs.\nDesigned for reading,\nopen-source.",
+  "brandTitle": "Albert's Blog",
+  "quote": "观潮于智能之巅\n筑路于前后之间\n落笔于思考之中",
   "nav": [
     {
       "id": "essay",
-      "label": "随笔",
+      "label": "文章",
       "ornament": "·",
       "visible": true,
       "order": 1
@@ -13,14 +13,14 @@
       "id": "bits",
       "label": "絮语",
       "ornament": "·",
-      "visible": true,
+      "visible": false,
       "order": 2
     },
     {
       "id": "memo",
       "label": "小记",
       "ornament": "·",
-      "visible": true,
+      "visible": false,
       "order": 3
     },
     {
