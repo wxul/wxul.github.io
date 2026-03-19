@@ -9,13 +9,13 @@ export const prerender = true;
 export async function getStaticPaths() {
   const base = import.meta.env.BASE_URL ?? '/';
   const withBase = createWithBase(base);
-  const essays = await getPublished('essay', {
+  const allPosts = await getPublished('posts', {
     orderBy: (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
   });
-  const archiveEssays = essays.filter((entry) => !isReservedSlug(entry.data.slug ?? entry.id));
-  return archiveEssays.map((entry, index) => {
-    const prevEntry = archiveEssays.at(index - 1);
-    const nextEntry = archiveEssays.at(index + 1);
+  const archivePosts = allPosts.filter((entry) => !isReservedSlug(entry.data.slug ?? entry.id));
+  return archivePosts.map((entry, index) => {
+    const prevEntry = archivePosts.at(index - 1);
+    const nextEntry = archivePosts.at(index + 1);
     return {
       params: { slug: entry.data.slug ?? entry.id },
       props: {

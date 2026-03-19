@@ -7,7 +7,7 @@ tags: ["AI", "NVIDIA", "GTC"]
 draft: false
 ---
 
-![GTC 2026](../../assets/essay/gtc2026-nvidia-keynote/gtc25-web-homepage-og.jpg)
+![GTC 2026](../../assets/posts/gtc2026-nvidia-keynote/gtc25-web-homepage-og.jpg)
 
 2026年3月16日上午11点，圣何塞SAP中心座无虚席。来自全球190个国家的超过3万名参会者屏息以待，等待一个穿着标志性皮衣的男人走上舞台。当黄仁勋（Jensen Huang）在掌声雷动中亮相，开启长达两小时的GTC 2026主题演讲时，整个AI产业都在注视——因为这一次，英伟达不只是发布了新芯片，而是展示了一整套**重新定义AI基础设施**的宏大蓝图。
 
@@ -21,7 +21,7 @@ GTC 2026的规模史无前例。大会于3月16日至19日在加州圣何塞市�
 
 ## Vera Rubin：3360亿晶体管缔造的算力怪兽
 
-![Vera Rubin GPU](../../assets/essay/gtc2026-nvidia-keynote/VERA-RUBIN-HERO-1200x624.jpg)
+![Vera Rubin GPU](../../assets/posts/gtc2026-nvidia-keynote/VERA-RUBIN-HERO-1200x624.jpg)
 
 如果说GTC 2026只有一个主角，那就是**Vera Rubin**——英伟达下一代AI计算平台。这个以诺贝尔物理学奖得主薇拉·鲁宾命名的平台，在今年1月CES上首次亮相并进入全面量产，此次GTC则是其首次面向全球开发者和企业客户的深度技术展示。
 
@@ -31,7 +31,7 @@ Rubin GPU采用台积电3nm工艺制造，集成**3360亿个晶体管**，较上
 
 ## NVL72机架：把整个互联网的带宽装进一个机柜
 
-![Vera Rubin NVL72 机架](../../assets/essay/gtc2026-nvidia-keynote/CES_2026_Nvidia_Vera_Rubin_VR72_Compute_Sled-scaled.webp)
+![Vera Rubin NVL72 机架](../../assets/posts/gtc2026-nvidia-keynote/CES_2026_Nvidia_Vera_Rubin_VR72_Compute_Sled-scaled.webp)
 
 真正让人倒吸一口冷气的，是Vera Rubin NVL72整机柜系统。这个单一机架集成了**72颗Rubin GPU、36颗Vera CPU和18颗BlueField-4 DPU**，全机架拥有220万亿个晶体管。推理算力达到**3.6 EFLOPS（ExaFLOPS）**，训练算力2.5 EFLOPS。机架内部总HBM4显存为20.7TB，LPDDR5X内存54TB。
 

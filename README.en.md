@@ -24,7 +24,7 @@ A minimal two-column Astro theme for personal writing and lightweight publishing
 
 - Two-column layout (sidebar navigation + content area)
 - Responsive design for mobile devices
-- Content collections: essay / bits / memo (archive is generated from essay)
+- Content collections: posts / bits / memo (archive is generated from posts)
 - Built-in local Theme Console (`/admin`) for visually managing site settings during development, making it easy to take over the theme after forking or cloning
 - Bits draft generator on `/bits/`: one-click Markdown output (copy/download), with multi-image support and automatic image dimension detection
 - RSS: default archive feed + section feeds
@@ -180,13 +180,13 @@ Then open `http://localhost:4321/admin/` in your browser.
 ### Collections and Routes
 
 Content Collections:
-- Essay: `src/content/essay`
+- Posts: `src/content/posts`
 - Bits: `src/content/bits`
 - Memo: `src/content/memo/index.md`
-- Archive: generated from essay entries via the `archive` field
+- Archive: generated from posts entries via the `archive` field
 
 Main routes:
-- List pages: `/archive/`, `/essay/`, `/bits/`, `/memo/`, `/about/`
+- List pages: `/archive/`, `/posts/`, `/bits/`, `/memo/`, `/about/`
 - Detail page: `/archive/[...slug]` (single canonical entry point)
 
 ### Image Assets
@@ -200,14 +200,14 @@ Main routes:
 
 ### Core Frontmatter Fields
 
-Essay:
+Posts:
 ```yaml
 title: My Post
 date: 2026-01-01
 draft: false        # Draft: hidden from list/RSS in production (visible in local preview; default false, optional)
-archive: true       # Archive switch: false excludes it from /archive and /archive/rss.xml (default true; detail page and /essay remain available)
+archive: true       # Archive switch: false excludes it from /archive and /archive/rss.xml (default true; detail page and /posts remain available)
 slug: optional      # Custom URL slug (filename is used by default)
-badge: optional     # List badge; if omitted, list shows "Essay"
+badge: optional     # List badge; if omitted, list shows "Posts"
 ```
 
 Bits:
@@ -316,7 +316,7 @@ Font license: SIL Open Font License 1.1 (see `public/fonts/OFL-LXGW-WenKai-Lite.
 
 - `/rss.xml` (default feed; uses the same archive items as `/archive/rss.xml`)
 - `/archive/rss.xml` (archive feed)
-- `/essay/rss.xml`
+- `/posts/rss.xml`
 
 Setting `SITE_URL` is recommended for deployment (affects absolute links in RSS/OG/canonical).
 

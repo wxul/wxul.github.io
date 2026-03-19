@@ -42,24 +42,24 @@ export async function getPublished<K extends CollectionKey>(
   return items.slice().sort(opts.orderBy);
 }
 
-export type EssayEntry = CollectionEntry<'essay'>;
+export type PostEntry = CollectionEntry<'posts'>;
 
-export const getEssaySlug = (entry: EssayEntry) => entry.data.slug ?? entry.id;
+export const getPostSlug = (entry: PostEntry) => entry.data.slug ?? entry.id;
 
-const orderByEssayDate = (a: EssayEntry, b: EssayEntry) => b.data.date.valueOf() - a.data.date.valueOf();
+const orderByPostDate = (a: PostEntry, b: PostEntry) => b.data.date.valueOf() - a.data.date.valueOf();
 
-export async function getSortedEssays() {
-  return getPublished('essay', {
-    orderBy: orderByEssayDate
+export async function getSortedPosts() {
+  return getPublished('posts', {
+    orderBy: orderByPostDate
   });
 }
 
-export async function getVisibleEssays() {
-  const essays = await getSortedEssays();
-  return essays.filter((entry) => !isReservedSlug(getEssaySlug(entry)));
+export async function getVisiblePosts() {
+  const posts = await getSortedPosts();
+  return posts.filter((entry) => !isReservedSlug(getPostSlug(entry)));
 }
 
-export async function getArchiveEssays() {
-  const essays = await getSortedEssays();
-  return essays.filter((entry) => entry.data.archive !== false && !isReservedSlug(getEssaySlug(entry)));
+export async function getArchivePosts() {
+  const posts = await getSortedPosts();
+  return posts.filter((entry) => entry.data.archive !== false && !isReservedSlug(getPostSlug(entry)));
 }

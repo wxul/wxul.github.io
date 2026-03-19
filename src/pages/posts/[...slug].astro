@@ -4,11 +4,11 @@ import { getPublished, isReservedSlug } from '../../lib/content';
 export const prerender = true;
 
 export async function getStaticPaths() {
-  const essays = await getPublished('essay', {
+  const posts = await getPublished('posts', {
     orderBy: (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
   });
-  const visibleEssays = essays.filter((entry) => !isReservedSlug(entry.data.slug ?? entry.id));
-  return visibleEssays.map((entry) => {
+  const visiblePosts = posts.filter((entry) => !isReservedSlug(entry.data.slug ?? entry.id));
+  return visiblePosts.map((entry) => {
     const slug = entry.data.slug ?? entry.id;
     return {
       params: { slug },

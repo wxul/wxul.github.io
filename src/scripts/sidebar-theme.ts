@@ -11,7 +11,7 @@ const prefersReducedMotion = () =>
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const isLongPage = () =>
-  /^(?:\/(?:archive|essay|memo)(?:\/|$))/.test(window.location.pathname);
+  /^(?:\/(?:archive|posts|memo)(?:\/|$))/.test(window.location.pathname);
 
 let updateFloating = () => {};
 

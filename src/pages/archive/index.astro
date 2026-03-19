@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Icon from '../../components/Icon.astro';
-import { createWithBase, getArchiveEssays, getEssaySlug, getPageSlice, getTotalPages } from '../../lib/content';
+import { createWithBase, getArchivePosts, getPostSlug, getPageSlice, getTotalPages } from '../../lib/content';
 import { getThemeSettings } from '../../lib/theme-settings';
 import { groupByYear, formatMonthDay, formatISODate, joinPageSubtitleText } from '../../utils/format';
 import { PAGE_SIZE_ARCHIVE } from '../../../site.config.mjs';
@@ -13,7 +13,7 @@ const {
     page
   }
 } = getThemeSettings();
-const archiveItems = await getArchiveEssays();
+const archiveItems = await getArchivePosts();
 const totalPages = getTotalPages(archiveItems.length, PAGE_SIZE_ARCHIVE);
 const currentPage = 1;
 const pageItems = getPageSlice(archiveItems, currentPage, PAGE_SIZE_ARCHIVE);
@@ -71,7 +71,7 @@ const subtitleText = joinPageSubtitleText(page.archive.subtitle, `共 ${archiveI
       <h2 class="archive-year">{g.year}</h2>
       <div class="archive-list">
         {g.list.map((entry) => {
-          const slug = getEssaySlug(entry);
+          const slug = getPostSlug(entry);
           const href = withBase(`/archive/${slug}/`);
           const tag = entry.data.tags?.[0];
           return (

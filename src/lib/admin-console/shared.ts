@@ -9,8 +9,8 @@ import type {
   SiteSocialPresetOrder
 } from '../theme-settings';
 
-export const ADMIN_NAV_IDS = ['essay', 'bits', 'memo', 'archive', 'about'] as const satisfies readonly SidebarNavId[];
-export const ADMIN_PAGE_IDS = ['essay', 'archive', 'bits', 'memo', 'about'] as const satisfies readonly PageId[];
+export const ADMIN_NAV_IDS = ['posts', 'bits', 'memo', 'archive', 'about'] as const satisfies readonly SidebarNavId[];
+export const ADMIN_PAGE_IDS = ['posts', 'archive', 'bits', 'memo', 'about'] as const satisfies readonly PageId[];
 export const ADMIN_SOCIAL_CUSTOM_LIMIT = 8;
 
 export const ADMIN_HERO_PRESETS = ['default', 'none'] as const satisfies readonly HeroPresetId[];
@@ -36,17 +36,17 @@ export const ADMIN_SIDEBAR_DIVIDER_OPTIONS = [
 
 export const ADMIN_HOME_INTRO_LINK_KEYS = [
   'archive',
-  'essay',
+  'posts',
   'bits',
   'memo',
   'about'
 ] as const satisfies readonly HomeIntroLinkKey[];
-export const ADMIN_HOME_INTRO_LINK_DEFAULT = ['archive', 'essay'] as const satisfies readonly HomeIntroLinkKey[];
+export const ADMIN_HOME_INTRO_LINK_DEFAULT = ['archive', 'posts'] as const satisfies readonly HomeIntroLinkKey[];
 export const ADMIN_HOME_INTRO_LINK_LIMIT = 2;
 export const ADMIN_HOME_INTRO_LINK_KEY_SET: ReadonlySet<HomeIntroLinkKey> = new Set(ADMIN_HOME_INTRO_LINK_KEYS);
 export const ADMIN_HOME_INTRO_LINK_OPTIONS = [
   { id: 'archive', label: '归档', href: '/archive/' },
-  { id: 'essay', label: '文章', href: '/essay/' },
+  { id: 'posts', label: '文章', href: '/posts/' },
   { id: 'bits', label: '絮语', href: '/bits/' },
   { id: 'memo', label: '小记', href: '/memo/' },
   { id: 'about', label: '关于', href: '/about/' }

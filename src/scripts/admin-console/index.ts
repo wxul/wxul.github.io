@@ -119,8 +119,8 @@ if (!root) {
     inputHomeIntroMoreLinkSecondaryEnabled: byId<HTMLInputElement>('home-intro-more-link-secondary-enabled'),
     homeIntroMoreLinkSecondaryGroupEl: byId<HTMLElement>('home-intro-more-link-secondary-group'),
     inputHomeIntroMoreLinkSecondary: byId<HTMLSelectElement>('home-intro-more-link-secondary'),
-    inputPageEssayTitle: byId<HTMLInputElement>('page-essay-title'),
-    inputPageEssaySubtitle: byId<HTMLInputElement>('page-essay-subtitle'),
+    inputPagePostsTitle: byId<HTMLInputElement>('page-posts-title'),
+    inputPagePostsSubtitle: byId<HTMLInputElement>('page-posts-subtitle'),
     inputPageArchiveTitle: byId<HTMLInputElement>('page-archive-title'),
     inputPageArchiveSubtitle: byId<HTMLInputElement>('page-archive-subtitle'),
     inputPageBitsTitle: byId<HTMLInputElement>('page-bits-title'),
@@ -186,8 +186,8 @@ if (!root) {
       inputHomeIntroMoreLinkSecondaryEnabled,
       homeIntroMoreLinkSecondaryGroupEl,
       inputHomeIntroMoreLinkSecondary,
-      inputPageEssayTitle,
-      inputPageEssaySubtitle,
+      inputPagePostsTitle,
+      inputPagePostsSubtitle,
       inputPageArchiveTitle,
       inputPageArchiveSubtitle,
       inputPageBitsTitle,
@@ -1022,9 +1022,9 @@ if (!root) {
           heroImageAlt
         },
         page: {
-          essay: {
-            title: normalizeOptionalSingleLine(String(isRecord(page.essay) ? page.essay.title ?? '' : '')),
-            subtitle: normalizeOptionalSingleLine(String(isRecord(page.essay) ? page.essay.subtitle ?? '' : ''))
+          posts: {
+            title: normalizeOptionalSingleLine(String(isRecord(page.posts) ? page.posts.title ?? '' : '')),
+            subtitle: normalizeOptionalSingleLine(String(isRecord(page.posts) ? page.posts.subtitle ?? '' : ''))
           },
           archive: {
             title: normalizeOptionalSingleLine(String(isRecord(page.archive) ? page.archive.title ?? '' : '')),
@@ -1066,7 +1066,7 @@ if (!root) {
     const collectSettings = (): EditableSettings => {
       const nav = getNavRows().map((row, index): EditableNavItem => {
         const idRaw = row.getAttribute('data-nav-id')?.trim() ?? '';
-        const id = isAdminNavId(idRaw) ? idRaw : ADMIN_NAV_IDS[index] ?? 'essay';
+        const id = isAdminNavId(idRaw) ? idRaw : ADMIN_NAV_IDS[index] ?? 'posts';
         const labelInput = query<HTMLInputElement>(row, '[data-nav-field="label"]');
         const ornamentInput = query<HTMLInputElement>(row, '[data-nav-field="ornament"]');
         const orderInput = query<HTMLInputElement>(row, '[data-nav-field="order"]');
@@ -1133,9 +1133,9 @@ if (!root) {
           heroImageAlt: normalizeHeroImageAlt(inputHeroImageAlt.value)
         },
         page: {
-          essay: {
-            title: normalizeOptionalSingleLine(inputPageEssayTitle.value),
-            subtitle: normalizeOptionalSingleLine(inputPageEssaySubtitle.value)
+          posts: {
+            title: normalizeOptionalSingleLine(inputPagePostsTitle.value),
+            subtitle: normalizeOptionalSingleLine(inputPagePostsSubtitle.value)
           },
           archive: {
             title: normalizeOptionalSingleLine(inputPageArchiveTitle.value),
@@ -1212,8 +1212,8 @@ if (!root) {
         introMoreLinks[1] || getFallbackSecondaryIntroLink(primaryIntroLink);
       syncHomeIntroLinkControls();
       refreshHomeIntroPreview();
-      inputPageEssayTitle.value = settings.page.essay?.title || '';
-      inputPageEssaySubtitle.value = settings.page.essay?.subtitle || '';
+      inputPagePostsTitle.value = settings.page.posts?.title || '';
+      inputPagePostsSubtitle.value = settings.page.posts?.subtitle || '';
       inputPageArchiveTitle.value = settings.page.archive?.title || '';
       inputPageArchiveSubtitle.value = settings.page.archive?.subtitle || '';
       inputPageBitsTitle.value = settings.page.bits?.title || '';
@@ -1237,7 +1237,7 @@ if (!root) {
       const navMap = new Map<SidebarNavId, EditableNavItem>(settings.shell.nav.map((item) => [item.id, item]));
       getNavRows().forEach((row, index) => {
         const rawId = row.getAttribute('data-nav-id')?.trim() ?? '';
-        const id = isAdminNavId(rawId) ? rawId : ADMIN_NAV_IDS[index] ?? 'essay';
+        const id = isAdminNavId(rawId) ? rawId : ADMIN_NAV_IDS[index] ?? 'posts';
         const current = navMap.get(id);
         const labelInput = query<HTMLInputElement>(row, '[data-nav-field="label"]');
         const ornamentInput = query<HTMLInputElement>(row, '[data-nav-field="ornament"]');
@@ -1465,7 +1465,7 @@ if (!root) {
       }
 
       const pageTitleMap: Array<[string | null, string, () => HTMLElement | null]> = [
-        [settings.page.essay?.title, '/essay/ 页面主标题', () => inputPageEssayTitle],
+        [settings.page.posts?.title, '/posts/ 页面主标题', () => inputPagePostsTitle],
         [settings.page.archive?.title, '/archive/ 页面主标题', () => inputPageArchiveTitle],
         [settings.page.bits?.title, '/bits/ 页面主标题', () => inputPageBitsTitle],
         [settings.page.memo?.title, '/memo/ 页面主标题', () => inputPageMemoTitle],
@@ -1487,7 +1487,7 @@ if (!root) {
       });
 
       const pageSubtitleMap: Array<[string | null, string, () => HTMLElement | null]> = [
-        [settings.page.essay?.subtitle, '/essay/ 页面副标题', () => inputPageEssaySubtitle],
+        [settings.page.posts?.subtitle, '/posts/ 页面副标题', () => inputPagePostsSubtitle],
         [settings.page.archive?.subtitle, '/archive/ 页面副标题', () => inputPageArchiveSubtitle],
         [settings.page.bits?.subtitle, '/bits/ 页面副标题', () => inputPageBitsSubtitle],
         [settings.page.memo?.subtitle, '/memo/ 页面副标题', () => inputPageMemoSubtitle],

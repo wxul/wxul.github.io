@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Icon from '../../components/Icon.astro';
 import EssayCard from '../../components/EssayCard.astro';
-import { createWithBase, getEssaySlug, getPageSlice, getTotalPages, getVisibleEssays } from '../../lib/content';
+import { createWithBase, getPostSlug, getPageSlice, getTotalPages, getVisiblePosts } from '../../lib/content';
 import { getThemeSettings } from '../../lib/theme-settings';
 import { getListExcerpt } from '../../utils/excerpt';
 import { joinPageSubtitleText } from '../../utils/format';
@@ -15,28 +15,28 @@ const {
     page
   }
 } = getThemeSettings();
-const visibleEssays = await getVisibleEssays();
-const totalPages = getTotalPages(visibleEssays.length, PAGE_SIZE_ESSAY);
+const visiblePosts = await getVisiblePosts();
+const totalPages = getTotalPages(visiblePosts.length, PAGE_SIZE_ESSAY);
 const currentPage = 1;
-const pageEssays = getPageSlice(visibleEssays, currentPage, PAGE_SIZE_ESSAY);
+const pagePosts = getPageSlice(visiblePosts, currentPage, PAGE_SIZE_ESSAY);
 const showPagination = totalPages > 1;
 const prevHref = null;
-const nextHref = currentPage < totalPages ? withBase(`/essay/page/${currentPage + 1}/`) : null;
-const pageTitleText = page.essay.title || '文章';
-const subtitleText = joinPageSubtitleText(page.essay.subtitle, `共 ${visibleEssays.length} 篇`);
+const nextHref = currentPage < totalPages ? withBase(`/posts/page/${currentPage + 1}/`) : null;
+const pageTitleText = page.posts.title || '文章';
+const subtitleText = joinPageSubtitleText(page.posts.subtitle, `共 ${visiblePosts.length} 篇`);
 ---
 
-<BaseLayout title={pageTitleText} bodyClass="essay-page">
-  <div class="page-header page-header--essay page-header--with-search">
+<BaseLayout title={pageTitleText} bodyClass="posts-page">
+  <div class="page-header page-header--posts page-header--with-search">
     <div class="page-heading">
       <h1 class="page-title">{pageTitleText}</h1>
       <span class="page-subtitle">
         {subtitleText ? `${subtitleText} · ` : null}
-        <a href={withBase('/essay/rss.xml')}>RSS</a>
+        <a href={withBase('/posts/rss.xml')}>RSS</a>
       </span>
     </div>
     <div class="page-actions">
-      <div class="entry-search" data-entry-search data-index-url="/essay/index.json">
+      <div class="entry-search" data-entry-search data-index-url="/posts/index.json">
         <div class="entry-search-panel" data-entry-search-panel aria-hidden="true">
           <input
             data-entry-search-input
@@ -62,10 +62,10 @@ const subtitleText = joinPageSubtitleText(page.essay.subtitle, `共 ${visibleEss
   <div class="entry-status" data-entry-search-status role="status" aria-live="polite"></div>
 
   <div class="list">
-    {pageEssays.map((e) => (
+    {pagePosts.map((e) => (
       <EssayCard
-        href={withBase(`/archive/${getEssaySlug(e)}/`)}
-        slug={getEssaySlug(e)}
+        href={withBase(`/archive/${getPostSlug(e)}/`)}
+        slug={getPostSlug(e)}
         title={e.data.title}
         excerpt={getListExcerpt(e)}
         date={e.data.date}

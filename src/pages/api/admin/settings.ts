@@ -100,7 +100,7 @@ const HOME_KEYS = [
   'heroImageSrc',
   'heroImageAlt'
 ] as const;
-const PAGE_KEYS = ['essay', 'archive', 'bits', 'memo', 'about'] as const;
+const PAGE_KEYS = ['posts', 'archive', 'bits', 'memo', 'about'] as const;
 const UI_KEYS = ['codeBlock', 'readingMode', 'layout'] as const;
 const FOOTER_KEYS = ['startYear', 'showCurrentYear', 'copyright'] as const;
 const SOCIAL_LINK_KEYS = ['github', 'x', 'email', 'presetOrder', 'custom'] as const;
@@ -862,7 +862,7 @@ const parsePatch = (
     } else {
       collectUnknownKeys('page', rawPage, PAGE_KEYS, errors);
       const nextPage = {
-        essay: { ...current.page.essay },
+        posts: { ...current.page.posts },
         archive: { ...current.page.archive },
         bits: {
           ...current.page.bits,

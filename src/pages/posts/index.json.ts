@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { getEssaySlug, getVisibleEssays } from '../../lib/content';
+import { getPostSlug, getVisiblePosts } from '../../lib/content';
 import { cleanMarkdownToText } from '../../utils/excerpt';
 
 export const prerender = true;
@@ -7,12 +7,12 @@ export const prerender = true;
 const MAX_INDEX_TEXT = 600;
 
 export const GET: APIRoute = async () => {
-  const visibleEssays = await getVisibleEssays();
-  const index = visibleEssays.map((entry) => {
+  const visiblePosts = await getVisiblePosts();
+  const index = visiblePosts.map((entry) => {
     const plain = cleanMarkdownToText(entry.body ?? '');
     const text = plain.length > MAX_INDEX_TEXT ? plain.slice(0, MAX_INDEX_TEXT) : plain;
     return {
-      slug: getEssaySlug(entry),
+      slug: getPostSlug(entry),
       title: entry.data.title ?? '',
       description: entry.data.description ?? '',
       tags: entry.data.tags ?? [],

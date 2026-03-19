@@ -180,13 +180,13 @@ npm run dev
 ### 内容与路由
 
 内容集合（Content Collections）：
-- 文章：位于 `src/content/essay` 目录
+- 文章：位于 `src/content/posts` 目录
 - 絮语：位于 `src/content/bits` 目录
 - 小记：位于 `src/content/memo/index.md`
 - 归档：由随笔集合按 `archive` 字段生成目录视图
 
 主要路由：
-- 列表页：`/archive/`、`/essay/`、`/bits/`、`/memo/`、`/about/`
+- 列表页：`/archive/`、`/posts/`、`/bits/`、`/memo/`、`/about/`
 - 详情页：`/archive/[...slug]`（唯一入口）
 
 ### 图片资源
@@ -204,7 +204,7 @@ npm run dev
 title: My Post
 date: 2026-01-01
 draft: false        # 草稿：上线后不会出现在列表/RSS（本地预览可见，默认是 false，可省略）
-archive: true       # 归档开关：false 不进 /archive 与 /archive/rss.xml（默认 true，详情与 /essay 仍可见，可省略）
+archive: true       # 归档开关：false 不进 /archive 与 /archive/rss.xml（默认 true，详情与 /posts 仍可见，可省略）
 slug: optional      # 自定义 URL slug（默认用文件名）
 badge: optional     # 列表徽标；未填时列表显示“随笔”
 ```
@@ -315,7 +315,7 @@ HTML 示例：
 
 - `/rss.xml`（默认 RSS；与 `/archive/rss.xml` 使用同源归档数据）
 - `/archive/rss.xml`（归档订阅）
-- `/essay/rss.xml`
+- `/posts/rss.xml`
 
 部署时建议设置 `SITE_URL`（影响 RSS/OG/canonical 的绝对链接）。
 

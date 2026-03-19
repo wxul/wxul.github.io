@@ -4,8 +4,8 @@ import Icon from '../../../components/Icon.astro';
 import {
   buildPaginatedPaths,
   createWithBase,
-  getArchiveEssays,
-  getEssaySlug,
+  getArchivePosts,
+  getPostSlug,
   getPageSlice,
   getTotalPages
 } from '../../../lib/content';
@@ -24,13 +24,13 @@ const {
 export const prerender = true;
 
 export async function getStaticPaths() {
-  const archiveItems = await getArchiveEssays();
+  const archiveItems = await getArchivePosts();
   const totalPages = getTotalPages(archiveItems.length, PAGE_SIZE_ARCHIVE);
   return buildPaginatedPaths(totalPages);
 }
 
 const currentPage = Number(Astro.params.page);
-const archiveItems = await getArchiveEssays();
+const archiveItems = await getArchivePosts();
 const totalPages = getTotalPages(archiveItems.length, PAGE_SIZE_ARCHIVE);
 const pageItems = getPageSlice(archiveItems, currentPage, PAGE_SIZE_ARCHIVE);
 const groups = groupByYear(pageItems, (entry) => entry.data.date);
@@ -94,7 +94,7 @@ const subtitleText = joinPageSubtitleText(
       <h2 class="archive-year">{g.year}</h2>
       <div class="archive-list">
         {g.list.map((entry) => {
-          const slug = getEssaySlug(entry);
+          const slug = getPostSlug(entry);
           const href = withBase(`/archive/${slug}/`);
           const tag = entry.data.tags?.[0];
           return (

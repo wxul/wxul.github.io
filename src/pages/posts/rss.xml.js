@@ -8,17 +8,17 @@ const withBase = createWithBase(base);
 const { settings } = getThemeSettings();
 
 export async function GET(context) {
-  const essays = await getPublished('essay', {
+  const allPosts = await getPublished('posts', {
     includeDraft: false,
     orderBy: (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
   });
-  const visibleEssays = essays.filter((entry) => !isReservedSlug(entry.data.slug ?? entry.id));
+  const visiblePosts = allPosts.filter((entry) => !isReservedSlug(entry.data.slug ?? entry.id));
 
   return rss({
     title: `${settings.site.title} · 文章`,
     description: '文章更新',
     site: context.site,
-    items: visibleEssays.map((entry) => ({
+    items: visiblePosts.map((entry) => ({
       title: entry.data.title,
       pubDate: entry.data.date,
       description: entry.data.description,

@@ -8,11 +8,11 @@ const withBase = createWithBase(base);
 const { settings } = getThemeSettings();
 
 export async function buildArchiveFeed(context, overrides = {}) {
-  const essays = await getPublished('essay', {
+  const allPosts = await getPublished('posts', {
     includeDraft: false,
     orderBy: (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
   });
-  const archiveItems = essays
+  const archiveItems = allPosts
     .filter((entry) => entry.data.archive !== false)
     .filter((entry) => !isReservedSlug(entry.data.slug ?? entry.id))
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());

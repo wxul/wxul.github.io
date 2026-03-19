@@ -33,12 +33,12 @@ const resolvedIntroMoreLinks = (introMoreLinks.length ? introMoreLinks : [...ADM
   (linkKey) => getAdminHomeIntroLinkOption(linkKey)
 );
 
-const essays = await getPublished('essay', {
+const allPosts = await getPublished('posts', {
   orderBy: (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 });
 
-const visibleEssays = essays.filter((entry) => !isReservedSlug(entry.data.slug ?? entry.id));
-const latest = visibleEssays.slice(0, 12);
+const visiblePosts = allPosts.filter((entry) => !isReservedSlug(entry.data.slug ?? entry.id));
+const latest = visiblePosts.slice(0, 12);
 
 type HomeHeadCriticalFontFace = {
   family: 'LXGW WenKai Lite' | 'Noto Serif SC';

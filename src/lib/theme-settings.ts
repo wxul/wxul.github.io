@@ -22,11 +22,11 @@ import {
 
 export type SettingSource = 'new' | 'legacy' | 'default';
 
-export type SidebarNavId = 'essay' | 'bits' | 'memo' | 'archive' | 'about';
-export type PageId = 'essay' | 'archive' | 'bits' | 'memo' | 'about';
+export type SidebarNavId = 'posts' | 'bits' | 'memo' | 'archive' | 'about';
+export type PageId = 'posts' | 'archive' | 'bits' | 'memo' | 'about';
 export type HeroPresetId = 'default' | 'none';
 export type SidebarDividerVariant = 'default' | 'subtle' | 'none';
-export type HomeIntroLinkKey = 'archive' | 'essay' | 'bits' | 'memo' | 'about';
+export type HomeIntroLinkKey = 'archive' | 'posts' | 'bits' | 'memo' | 'about';
 export type SiteSocialPresetId = 'github' | 'x' | 'email';
 export type SiteSocialKind = 'preset' | 'custom';
 export type SiteSocialIconKey =
@@ -133,7 +133,7 @@ export interface BitsPageSettings extends PageHeadingSettings {
 }
 
 export interface PageSettings {
-  essay: PageHeadingSettings;
+  posts: PageHeadingSettings;
   archive: PageHeadingSettings;
   bits: BitsPageSettings;
   memo: MemoPageSettings;
@@ -192,8 +192,8 @@ export interface ThemeSettingsSources {
     heroImageAlt: SettingSource;
   };
   page: {
-    essayTitle: SettingSource;
-    essaySubtitle: SettingSource;
+    postsTitle: SettingSource;
+    postsSubtitle: SettingSource;
     archiveTitle: SettingSource;
     archiveSubtitle: SettingSource;
     bitsTitle: SettingSource;
@@ -243,9 +243,9 @@ const SETTINGS_DIR = join(process.cwd(), 'src', 'data', 'settings');
 const LEGACY_INTRO_LEAD =
   '这是一个开源写作主题与示例内容库:包含 文章/essay、小记/memo、归档/archive 与 絮语/bits，使用与配置请见 README 。';
 const LEGACY_INTRO_MORE = '更多文章请访问';
-const LEGACY_ESSAY_TITLE = '文章';
+const LEGACY_POSTS_TITLE = '文章';
 const LEGACY_ARCHIVE_TITLE = '归档';
-const LEGACY_ESSAY_SUBTITLE = '随笔与杂记';
+const LEGACY_POSTS_SUBTITLE = '随笔与杂记';
 const LEGACY_BITS_TITLE = '絮语';
 const LEGACY_BITS_SUBTITLE = '生活不只是长篇';
 const LEGACY_ABOUT_TITLE = '关于';
@@ -267,7 +267,7 @@ const LEGACY_SOCIAL_LINKS: SiteSocialLinks = {
   resolvedSocialItems: []
 };
 const LEGACY_NAV: SidebarNavItem[] = [
-  { id: 'essay', label: '文章', ornament: ADMIN_NAV_ORNAMENT_DEFAULT, visible: true, order: 1 },
+  { id: 'posts', label: '文章', ornament: ADMIN_NAV_ORNAMENT_DEFAULT, visible: true, order: 1 },
   { id: 'bits', label: '絮语', ornament: ADMIN_NAV_ORNAMENT_DEFAULT, visible: true, order: 2 },
   { id: 'memo', label: '小记', ornament: ADMIN_NAV_ORNAMENT_DEFAULT, visible: true, order: 3 },
   { id: 'archive', label: '归档', ornament: ADMIN_NAV_ORNAMENT_DEFAULT, visible: true, order: 4 },
@@ -334,9 +334,9 @@ const DEFAULT_HOME: HomeSettings = {
 };
 
 const DEFAULT_PAGE: PageSettings = {
-  essay: {
-    title: LEGACY_ESSAY_TITLE,
-    subtitle: LEGACY_ESSAY_SUBTITLE
+  posts: {
+    title: LEGACY_POSTS_TITLE,
+    subtitle: LEGACY_POSTS_SUBTITLE
   },
   archive: {
     title: LEGACY_ARCHIVE_TITLE,
@@ -372,7 +372,7 @@ const DEFAULT_UI: UiSettings = {
   }
 };
 
-const NAV_IDS: ReadonlySet<SidebarNavId> = new Set(['essay', 'bits', 'memo', 'archive', 'about']);
+const NAV_IDS: ReadonlySet<SidebarNavId> = new Set(['posts', 'bits', 'memo', 'archive', 'about']);
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const GITHUB_HOSTS = ['github.com'];
 const X_HOSTS = ['x.com', 'twitter.com'];
@@ -388,7 +388,7 @@ const PRESET_SOCIAL_ITEMS: readonly {
 ];
 
 const SIDEBAR_HREFS: Record<SidebarNavId, string> = {
-  essay: '/essay/',
+  posts: '/posts/',
   bits: '/bits/',
   memo: '/memo/',
   archive: '/archive/',
@@ -706,7 +706,7 @@ export const getThemeSettings = (): ThemeSettingsResolved => {
   const siteFooterJson = isRecord(siteJson?.footer) ? siteJson.footer : undefined;
   const siteSocialLinksJson = isRecord(siteJson?.socialLinks) ? siteJson.socialLinks : undefined;
   const siteSocialPresetOrderJson = isRecord(siteSocialLinksJson?.presetOrder) ? siteSocialLinksJson.presetOrder : undefined;
-  const pageEssayJson = isRecord(pageJson?.essay) ? pageJson.essay : undefined;
+  const pagePostsJson = isRecord(pageJson?.posts) ? pageJson.posts : undefined;
   const pageArchiveJson = isRecord(pageJson?.archive) ? pageJson.archive : undefined;
   const pageBitsJson = isRecord(pageJson?.bits) ? pageJson.bits : undefined;
   const pageBitsDefaultAuthorJson = isRecord(pageBitsJson?.defaultAuthor) ? pageBitsJson.defaultAuthor : undefined;
@@ -836,15 +836,15 @@ export const getThemeSettings = (): ThemeSettingsResolved => {
     DEFAULT_HOME.heroImageAlt
   );
 
-  const essayTitle = resolveValue(
-    asNullableString(pageEssayJson?.title),
+  const postsTitle = resolveValue(
+    asNullableString(pagePostsJson?.title),
     undefined,
-    DEFAULT_PAGE.essay.title
+    DEFAULT_PAGE.posts.title
   );
-  const essaySubtitle = resolveValue(
-    asNullableString(pageEssayJson?.subtitle),
-    LEGACY_ESSAY_SUBTITLE,
-    DEFAULT_PAGE.essay.subtitle
+  const postsSubtitle = resolveValue(
+    asNullableString(pagePostsJson?.subtitle),
+    LEGACY_POSTS_SUBTITLE,
+    DEFAULT_PAGE.posts.subtitle
   );
   const archiveTitle = resolveValue(
     asNullableString(pageArchiveJson?.title),
@@ -969,9 +969,9 @@ export const getThemeSettings = (): ThemeSettingsResolved => {
         heroImageAlt: heroImageAlt.value
       },
       page: {
-        essay: {
-          title: essayTitle.value,
-          subtitle: essaySubtitle.value
+        posts: {
+          title: postsTitle.value,
+          subtitle: postsSubtitle.value
         },
         archive: {
           title: archiveTitle.value,
@@ -1038,8 +1038,8 @@ export const getThemeSettings = (): ThemeSettingsResolved => {
         heroImageAlt: heroImageAlt.source
       },
       page: {
-        essayTitle: essayTitle.source,
-        essaySubtitle: essaySubtitle.source,
+        postsTitle: postsTitle.source,
+        postsSubtitle: postsSubtitle.source,
         archiveTitle: archiveTitle.source,
         archiveSubtitle: archiveSubtitle.source,
         bitsTitle: bitsTitle.source,
@@ -1092,7 +1092,7 @@ export const toEditableThemeSettingsPayload = (
       introMoreLinks: cloneHomeIntroLinks(resolved.settings.home.introMoreLinks)
     },
     page: {
-      essay: { ...resolved.settings.page.essay },
+      posts: { ...resolved.settings.page.posts },
       archive: { ...resolved.settings.page.archive },
       bits: {
         title: resolved.settings.page.bits.title,

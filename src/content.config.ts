@@ -57,8 +57,8 @@ const bitsAuthor = z.object({
   avatar: bitsAuthorAvatar.optional()
 });
 
-const essay = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/essay' }),
+const posts = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/posts' }),
   schema: z.object({
     ...baseFields,
     cover: z.string().optional(),
@@ -94,4 +94,4 @@ const memo = defineCollection({
   })
 });
 
-export const collections = { essay, bits, memo };
+export const collections = { posts, bits, memo };

@@ -34,11 +34,11 @@ The format is based on Keep a Changelog, and this project aims to follow Semanti
 - 修复隐藏侧栏分隔线后页面布局错位的问题，并改进保存失败时的错误提示与接口校验反馈。
 - 修复 Theme Console 社交链接在固定平台与自定义链接之间可能出现的排序冲突；后台自动整理排序，并限制可选范围，避免保存重复排序值。
 - 修复 Theme Console 自定义社交链接保存时可能静默覆盖已有名称的问题；固定平台会自动沿用平台名，兜底平台统一显示为“网站”。
-- 修复 `/archive/` 与 `/essay/` 列表搜索在子路径部署下可能重复拼接 Base URL，导致索引加载失败的问题。
+- 修复 `/archive/` 与 `/posts/` 列表搜索在子路径部署下可能重复拼接 Base URL，导致索引加载失败的问题。
 - 修复首页在子路径部署下可能请求错误字体路径的问题；当前首屏字体声明会跟随 `BASE_URL` 输出，避免字体 404、回退或二次切换。
 - 修复 `/bits/` 单图卡片无法打开图片预览的问题，单图与多图现在共用同一套 Lightbox 交互。
 - 修复 `/bits/` 草稿对话框作者设置区域的可访问性问题，补齐展开状态语义与焦点管理。
-- 修复开发环境下 `/archive/{slug}/`、`/essay/{slug}/` 及对应分页页在 Theme Console 使用 `server` 输出模式后可能无法访问的问题。
+- 修复开发环境下 `/archive/{slug}/`、`/posts/{slug}/` 及对应分页页在 Theme Console 使用 `server` 输出模式后可能无法访问的问题。
 - 修复正文页图片预览对键盘用户不可用的问题；当前可通过键盘打开 Lightbox，关闭后焦点会返回到原触发位置。
 - 修复 Theme Console 默认语言在配置文件被手动写入非法值时仍可能透传的问题；当前会回退到安全默认值，避免输出非法 `<html lang>`。
 
@@ -49,7 +49,7 @@ The format is based on Keep a Changelog, and this project aims to follow Semanti
 ### Added
 - 新增 sitemap 与构建期 `robots.txt`，在设置 `SITE_URL` 时自动启用。
 - 新增统一的 Lightbox 预览能力，正文页与 `/bits/` 复用同一套图片预览交互。
-- `/archive/` 与 `/essay/` 列表页新增静态搜索，索引按需加载，搜索体验更轻量。
+- `/archive/` 与 `/posts/` 列表页新增静态搜索，索引按需加载，搜索体验更轻量。
 - `/bits/` 新增轻量图片预览与 Markdown 语法演示。
 - `/bits/` 支持作者覆盖，并在草稿生成器中补充作者输入。
 - 新增 Cloudflare Pages 与 Netlify 的基础部署配置。
@@ -57,11 +57,11 @@ The format is based on Keep a Changelog, and this project aims to follow Semanti
 ### Changed
 - Markdown 渲染链路补充安全清洗，在保留现有写作能力的前提下增强 XSS 防护。
 - `/bits/` 列表改为按内容长度分流展示：短内容保留原结构渲染，长内容显示摘要。
-- `/archive/` 与 `/essay/` 列表页新增搜索框与命中提示。
+- `/archive/` 与 `/posts/` 列表页新增搜索框与命中提示。
 - `/bits/` 多图展示与交互进一步优化，缩略图、移动端网格与 `+N` 展示更清晰。
 - 首页 Hero 图片改用 `astro:assets` 优化，并配合 LCP 控制提升首屏表现。
 - 字体改为子集化与自托管，减少首屏字体负担。
-- 路由与内容集合进一步收敛：归档入口统一为 `/archive/`，`/essay/` 改为重定向，`/memo/` 替代 `/kids/`。
+- 路由与内容集合进一步收敛：归档入口统一为 `/archive/`，`/posts/` 改为重定向，`/memo/` 替代 `/kids/`。
 
 ### Fixed
 - 修复 bits 多图 `+N` 点击无响应的问题。
@@ -114,8 +114,8 @@ The format is based on Keep a Changelog, and this project aims to follow Semanti
 
 ### Added
 - 建立 Astro 主题基础骨架，包含固定侧栏与内容区布局。
-- 初步建立内容集合：`essay`、`bits`、`memo`。
-- 增加基础路由：`/`、`/archive/`、`/essay/`、`/bits/`、`/memo/`、`/about/`。
+- 初步建立内容集合：`posts`、`bits`、`memo`。
+- 增加基础路由：`/`、`/archive/`、`/posts/`、`/bits/`、`/memo/`、`/about/`。
 - 增加 RSS 订阅入口与 `/bits/` 草稿生成能力。
 - 增加夜间模式与阅读模式入口。
 - 增加最薄的 Callout 组件，实现统一的输出结构。
