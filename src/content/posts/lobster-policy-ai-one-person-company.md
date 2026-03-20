@@ -1,5 +1,5 @@
 ---
-title: \"龙虾十条\"与AI一人公司：中国智能体创业新纪元
+title: '"龙虾十条"与AI一人公司：中国智能体创业新纪元'
 date: 2026-03-10
 badge: AI
 tags: ["AI", "Agent", "OpenClaw"]
