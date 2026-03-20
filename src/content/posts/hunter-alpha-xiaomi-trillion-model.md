@@ -7,6 +7,8 @@ tags: ["AI", "LLM", "小米"]
 draft: false
 ---
 
+![Hunter Alpha 身份揭晓](../../assets/posts/hunter-alpha-xiaomi-trillion-model/cover.png)
+
 **Hunter Alpha 就是小米的 MiMo-V2-Pro。** 2026年3月18日，小米正式确认，在全球AI圈掀起一周猜谜狂潮的匿名模型"Hunter Alpha"，正是其旗舰基础模型 **MiMo-V2-Pro** 的早期内测版本。伴侣模型"Healer Alpha"也同步揭晓，其真身为小米的全模态模型 **MiMo-V2-Omni**。此次官宣彻底推翻了两种主流猜测——Hunter Alpha 既非 DeepSeek V4，也非智谱AI的 GLM-6。长期以手机和消费电子著称的小米，就此以一款万亿参数模型向全球宣告：它已成为前沿AI领域的真正竞争者。该模型在 Artificial Analysis 全球智能指数中排名 **第8位**，并在 OpenRouter 一周内消耗了超过 **1万亿 tokens** 的真实用量。
 
 ---

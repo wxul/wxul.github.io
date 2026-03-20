@@ -1,11 +1,13 @@
 ---
 title: Remotion 渲染原理深度解析
 description: 你有没有想过，一段用 React 写的动画代码，是怎么变成一个 MP4 文件的？答案可能比你想象的更"暴力"，也更精妙。
-date: 2026-03-18
+date: 2026-03-19
 badge: Remotion
 tags: ["Remotion"]
 draft: false
 ---
+
+![Remotion 渲染原理深度解析](../../assets/posts/remotion-rendering-deep-dive/cover.png)
 
 > 你有没有想过，一段用 React 写的动画代码，是怎么变成一个 MP4 文件的？答案可能比你想象的更"暴力"，也更精妙。
 
