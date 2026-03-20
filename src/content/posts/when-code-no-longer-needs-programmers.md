@@ -2,7 +2,7 @@
 title: 当代码不再需要程序员亲手书写
 date: 2026-03-14
 badge: AI
-tags: ["AI"]
+tags: ["AI", "Vibe Coding", "Developer"]
 draft: false
 ---
 

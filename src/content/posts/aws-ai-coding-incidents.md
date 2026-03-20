@@ -2,7 +2,7 @@
 title: AWS使用AI编程工具引发的生产事故：一份不完全档案
 date: 2026-03-16
 badge: AI
-tags: ["AI", "AWS"]
+tags: ["AI", "AWS", "Coding"]
 draft: false
 ---
 

@@ -93,7 +93,7 @@ const subtitleText = joinPageSubtitleText(
         title={e.data.title}
         excerpt={getListExcerpt(e)}
         date={e.data.date}
-        tag={e.data.tags?.[0]}
+        tags={e.data.tags ?? []}
         badge={e.data.badge}
       />
     ))}

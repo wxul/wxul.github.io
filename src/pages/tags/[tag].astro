@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { createWithBase, getArchivePosts, getPostSlug } from '../../lib/content';
+import { groupByYear, formatMonthDay, formatISODate } from '../../utils/format';
+
+const base = import.meta.env.BASE_URL ?? '/';
+const withBase = createWithBase(base);
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const posts = await getArchivePosts();
+  const tagMap = new Map<string, typeof posts>();
+  for (const post of posts) {
+    for (const tag of post.data.tags ?? []) {
+      if (!tagMap.has(tag)) tagMap.set(tag, []);
+      tagMap.get(tag)!.push(post);
+    }
+  }
+  return Array.from(tagMap.entries()).map(([tag, posts]) => ({
+    params: { tag },
+    props: { tag, posts }
+  }));
+}
+
+const { tag, posts } = Astro.props;
+const groups = groupByYear(posts, (entry: any) => entry.data.date);
+---
+
+<BaseLayout title={`#${tag}`}>
+  <div class="page-header">
+    <div class="page-heading">
+      <h1 class="page-title">#{tag}</h1>
+      <span class="page-subtitle">共 {posts.length} 篇文章</span>
+    </div>
+  </div>
+
+  {groups.map((g: any) => (
+    <section>
+      <h2 class="archive-year">{g.year}</h2>
+      <div class="archive-list">
+        {g.list.map((entry: any) => {
+          const slug = getPostSlug(entry);
+          const href = withBase(`/archive/${slug}/`);
+          const tags = entry.data.tags ?? [];
+          return (
+          <div class="archive-row">
+            <div class="archive-title">
+              <a href={href}>{entry.data.title}</a>
+            </div>
+            <div class="archive-meta">
+              <div class="archive-date">
+                <span class="archive-date-md">{formatMonthDay(entry.data.date)}</span>
+                <span class="archive-date-full">{formatISODate(entry.data.date)}</span>
+              </div>
+              {tags.length > 0 ? (
+                <div class="archive-tag">{tags.map((t: string, i: number) => (
+                  <><a class="tag-link" href={withBase(`/tags/${encodeURIComponent(t)}/`)}
+                    class:list={[{ 'tag-link--active': t === tag }]}>#{t}</a>{i < tags.length - 1 ? ' ' : ''}</>
+                ))}</div>
+              ) : null}
+            </div>
+          </div>
+        );
+        })}
+      </div>
+    </section>
+  ))}
+
+  <div style="margin-top: 24px;">
+    <a href={withBase('/tags/')} class="tag-link">← 所有标签</a>
+  </div>
+</BaseLayout>

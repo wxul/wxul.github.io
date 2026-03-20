@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { createWithBase, getArchivePosts } from '../../lib/content';
+
+const base = import.meta.env.BASE_URL ?? '/';
+const withBase = createWithBase(base);
+
+const posts = await getArchivePosts();
+const tagCount = new Map<string, number>();
+for (const post of posts) {
+  for (const tag of post.data.tags ?? []) {
+    tagCount.set(tag, (tagCount.get(tag) ?? 0) + 1);
+  }
+}
+
+const sortedTags = Array.from(tagCount.entries()).sort((a, b) => b[1] - a[1]);
+---
+
+<BaseLayout title="标签">
+  <div class="page-header">
+    <div class="page-heading">
+      <h1 class="page-title">标签</h1>
+      <span class="page-subtitle">共 {sortedTags.length} 个标签</span>
+    </div>
+  </div>
+
+  <div class="tag-cloud">
+    {sortedTags.map(([tag, count]) => (
+      <a class="tag-cloud-item" href={withBase(`/tags/${encodeURIComponent(tag)}/`)}>
+        <span class="tag-cloud-name">#{tag}</span>
+        <span class="tag-cloud-count">{count}</span>
+      </a>
+    ))}
+  </div>
+</BaseLayout>
+
+<style>
+  .tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .tag-cloud-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .tag-cloud-item:hover {
+    background: var(--accent);
+    color: var(--bg);
+  }
+
+  .tag-cloud-count {
+    font-size: 0.8em;
+    color: var(--muted);
+  }
+
+  .tag-cloud-item:hover .tag-cloud-count {
+    color: var(--bg);
+    opacity: 0.7;
+  }
+</style>

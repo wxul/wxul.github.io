@@ -2,7 +2,7 @@
 title: 焦虑买不来未来：从OpenClaw爆火看AI时代的生存逻辑
 date: 2026-03-13
 badge: AI
-tags: ["AI", "OpenClaw"]
+tags: ["AI", "OpenClaw", "Vibe Coding"]
 draft: false
 ---
 

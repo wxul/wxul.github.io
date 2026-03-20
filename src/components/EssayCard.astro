@@ -6,11 +6,12 @@ const {
   title,
   excerpt,
   date,
-  tag,
+  tags = [],
   badge = '文章',
   slug = ''
 } = Astro.props;
 
+const base = import.meta.env.BASE_URL ?? '/';
 const displayBadge = badge?.trim() ? badge : '文章';
 ---
 
@@ -22,8 +23,5 @@ const displayBadge = badge?.trim() ? badge : '文章';
     </div>
   </div>
   {excerpt ? <p class="list-item__excerpt">{excerpt}</p> : null}
-  <div class="meta-line">
-    发布于：{formatISODate(date)}
-    {tag ? <> · <span class="tag">#{tag}</span></> : null}
-  </div>
+  <div class="meta-line">发布于：{formatISODate(date)}{tags.length > 0 ? <>{' · '}{tags.map((t: string, i: number) => <Fragment key={t}><span class="tag">#{t}</span>{i < tags.length - 1 ? ' ' : ''}</Fragment>)}</> : null}</div>
 </a>

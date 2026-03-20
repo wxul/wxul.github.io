@@ -2,7 +2,7 @@
 title: AI 周报｜2026 年第 10 周（3月3日—3月10日）
 date: 2026-03-11
 badge: AI
-tags: ["AI"]
+tags: ["AI", "Weekly"]
 draft: false
 ---
 

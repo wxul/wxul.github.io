@@ -393,6 +393,23 @@
   color: var(--accent);
 }
 
+.tag-link {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.tag-link:hover {
+  text-decoration: underline;
+}
+
+.tag-link--active {
+  font-weight: 600;
+}
+
+.archive-tag .tag-link {
+  color: var(--accent);
+}
+
 /* Pagination */
 .pagination {
   margin-top: 22px;

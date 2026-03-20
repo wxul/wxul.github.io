@@ -15,7 +15,7 @@ const {
 } = Astro.props;
 
 const tags = entry?.data?.tags ?? [];
-const firstTag = tags[0];
+const base = import.meta.env.BASE_URL ?? '/';
 const defaultImage = '/og.svg';
 const coverImage = entry?.data?.cover ?? null;
 const ogImage = coverImage ?? defaultImage;
@@ -52,7 +52,9 @@ const description = getMetaDescription(entry);
     <div class="meta-line">
       发布于：{formatISODate(entry.data.date)}
       {typeLabel ? <> · <span class="tag">{typeLabel}</span></> : null}
-      {firstTag ? <> · <span class="tag">#{firstTag}</span></> : null}
+      {tags.length > 0 ? <> · {tags.map((t: string, i: number) => (
+        <><a class="tag-link" href={`${base}tags/${encodeURIComponent(t)}/`}>#{t}</a>{i < tags.length - 1 ? ' ' : ''}</>
+      ))}</> : null}
     </div>
   </div>
 

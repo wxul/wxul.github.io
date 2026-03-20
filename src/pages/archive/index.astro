@@ -73,7 +73,7 @@ const subtitleText = joinPageSubtitleText(page.archive.subtitle, `共 ${archiveI
         {g.list.map((entry) => {
           const slug = getPostSlug(entry);
           const href = withBase(`/archive/${slug}/`);
-          const tag = entry.data.tags?.[0];
+          const tags = entry.data.tags ?? [];
           return (
           <div class="archive-row" data-entry-item data-slug={slug}>
             <div class="archive-title">
@@ -84,8 +84,10 @@ const subtitleText = joinPageSubtitleText(page.archive.subtitle, `共 ${archiveI
                 <span class="archive-date-md">{formatMonthDay(entry.data.date)}</span>
                 <span class="archive-date-full">{formatISODate(entry.data.date)}</span>
               </div>
-              {tag ? (
-                <div class="archive-tag">#{tag}</div>
+              {tags.length > 0 ? (
+                <div class="archive-tag">{tags.map((t: string, i: number) => (
+                  <><a class="tag-link" href={withBase(`/tags/${encodeURIComponent(t)}/`)}>#{t}</a>{i < tags.length - 1 ? ' ' : ''}</>
+                ))}</div>
               ) : null}
             </div>
           </div>

@@ -591,13 +591,12 @@ body[data-reading="immersive"] .reader-toggle .icon-book-open {
     {latest.map((entry) => {
       const slug = entry.data.slug ?? entry.id;
       const href = withBase(`/archive/${slug}/`);
-      const tag = entry.data.tags?.[0];
       return (
         <EntryListItem
           href={href}
           title={entry.data.title}
           date={entry.data.date}
-          tag={tag}
+          tags={entry.data.tags ?? []}
           excerpt={getListExcerpt(entry)}
         />
       );

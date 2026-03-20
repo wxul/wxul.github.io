@@ -31,11 +31,18 @@
       "order": 4
     },
     {
+      "id": "tags",
+      "label": "标签",
+      "ornament": "·",
+      "visible": true,
+      "order": 5
+    },
+    {
       "id": "about",
       "label": "关于",
       "ornament": "·",
       "visible": true,
-      "order": 5
+      "order": 6
     }
   ]
 }

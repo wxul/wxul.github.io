@@ -2,7 +2,7 @@
 title: 苹果2026年春季发布会全景复盘：七款新品背后的战略攻防
 date: 2026-03-09
 badge: Apple
-tags: ["Apple"]
+tags: ["Apple", "iPhone", "Mac"]
 draft: false
 ---
 

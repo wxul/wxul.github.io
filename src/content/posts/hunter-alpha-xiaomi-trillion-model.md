@@ -3,7 +3,7 @@ title: Hunter Alpha 身份揭晓：小米万亿参数模型的隐秘首秀
 description: "Hunter Alpha 就是小米的 MiMo-V2-Pro"
 date: 2026-03-19
 badge: AI
-tags: ["AI", "LLM", "小米"]
+tags: ["AI", "LLM", "Xiaomi"]
 draft: false
 ---
 

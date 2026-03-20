@@ -3,7 +3,7 @@ title: MCP的"中年危机"：从万众追捧到质疑四起
 description: "MCP（Model Context Protocol）正经历其诞生以来最大的信任危机。"
 date: 2026-03-20
 badge: AI
-tags: ["MCP", "AI", "LLM"]
+tags: ["AI", "MCP", "Security"]
 draft: false
 ---
 
