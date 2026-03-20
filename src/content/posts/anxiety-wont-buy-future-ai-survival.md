@@ -6,8 +6,6 @@ tags: ["AI", "OpenClaw", "Vibe Coding"]
 draft: false
 ---
 
-# 焦虑买不来未来：从OpenClaw爆火看AI时代的生存逻辑
-
 > 花499元请人上门安装一只"小龙虾"，装好之后却不知道它能干什么——这个画面，是整个AI焦虑时代最真实的缩影。
 
 ---
