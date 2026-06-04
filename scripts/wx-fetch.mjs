@@ -2,6 +2,7 @@ const UA =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 Edg/148.0.0.0';
 
 import TurndownService from 'turndown';
+import { gfm } from '@joplin/turndown-plugin-gfm';
 
 const RISK_MARKERS = [
   '环境异常',
@@ -151,8 +152,19 @@ function stripDuplicateOrderedNumbers(md) {
   return md.replace(/^(\s*\d+\.\s+)\d+\\?\.\s+/gm, '$1');
 }
 
+function stripWeChatNoise(html) {
+  return html
+    .replace(/\s+data-[a-z\-]+="[^"]*"/gi, '')
+    .replace(/\s+style="[^"]*"/gi, '')
+    .replace(/\s+class="[^"]*"/gi, '')
+    .replace(/<o:p[^>]*>[\s\S]*?<\/o:p>/gi, '')
+    .replace(/<!--[\s\S]*?-->/g, '');
+}
+
+turndown.use(gfm);
+
 const contentMarkdown = contentHtml
-  ? stripDuplicateOrderedNumbers(turndown.turndown(contentHtml)).trim()
+  ? stripDuplicateOrderedNumbers(turndown.turndown(stripWeChatNoise(contentHtml))).trim()
   : null;
 
 if (!title && !contentMarkdown) {
