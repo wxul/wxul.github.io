@@ -274,6 +274,13 @@ HTML 示例：
 ```
 
 
+### 从公众号同步
+
+需要将作者本人的公众号文章（`mp.weixin.qq.com/s/*`）同步到本仓库时，按 [docs/sop/wechat-sync.md](docs/sop/wechat-sync.md) 执行。用法：把一个或多个 URL 交给 Claude Code，要求"按 SOP 同步"。批量给 ≥2 个 URL 时会以 3–5 并发派 subagent 处理。
+
+抓取脚本：`scripts/wx-fetch.mjs`（npm 别名 `pnpm sync:wx:fetch`），用真实浏览器 UA + turndown 转 markdown。
+
+
 ## 字体与许可
 
 本主题使用两套字体排版（自托管 + 子集化）：

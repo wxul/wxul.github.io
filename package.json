@@ -34,7 +34,8 @@
     "font:charset": "node ./scripts/font-charset.mjs",
     "font:subset": "node ./scripts/font-subset.mjs",
     "font:build": "npm run font:charset && npm run font:subset",
-    "new:bit": "node ./scripts/new-bit.mjs"
+    "new:bit": "node ./scripts/new-bit.mjs",
+    "sync:wx:fetch": "node ./scripts/wx-fetch.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.17",
@@ -51,6 +52,7 @@
     "rehype-sanitize": "^6.0.0",
     "remark-directive": "^4.0.0",
     "ttf2woff2": "^8.0.1",
+    "turndown": "^7.2.4",
     "typescript": "^5.9.3",
     "unist-util-visit": "^5.0.0"
   },
