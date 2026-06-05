@@ -1,0 +1,335 @@
+---
+title: AI 周报：2026 年 3 月 17 日 – 3 月 24 日
+date: 2026-03-25
+badge: AI
+tags: ["AI", "Weekly", "Agent", "NVIDIA"]
+draft: false
+---
+
+**本周 AI 领域迎来密集重磅事件。** NVIDIA GTC 2026 大会发布 Vera Rubin 全栈 AI 平台并预告万亿美元订单管线；特朗普政府发布首个国家级 AI 立法框架；小米 MiMo-V2 系列横空出世惊艳全球；OpenAI 筹备 IPO 同时计划员工翻倍至 8000 人；AI 智能体（Agent）从概念走向全面落地，成为本周贯穿始终的核心主题。以下为本周经多来源交叉验证的重要 AI 新闻。
+
+---
+
+## 一、NVIDIA GTC 2026 大会（3 月 16–19 日，圣何塞）
+
+### NVIDIA 发布 Vera Rubin 全栈 AI 平台，黄仁勋预告万亿美元订单
+
+NVIDIA CEO 黄仁勋在 GTC 2026 主题演讲中发布了下一代 AI 计算平台 Vera Rubin，包含 **7 款新芯片、5 种机架系统和 1 台超级计算机**，专为智能体 AI 设计。Vera Rubin NVL72 机架相比前代 Blackwell 实现 **10 倍每瓦推理性能提升**，训练所需 GPU 数量减少 75%。黄仁勋宣布 Blackwell 和 Vera Rubin 平台到 2027 年的采购订单预计达到 **1 万亿美元**，较去年预测翻倍。
+
+-   • 来源：CNBC | 日期：2026-03-16
+    
+-   • 链接：https://www.cnbc.com/2026/03/16/nvidia-gtc-2026-ceo-jensen-huang-keynote-blackwell-vera-rubin.html
+    
+
+### NVIDIA 推出 Groq 3 LPU——收购 Groq 后首款推理专用芯片
+
+黄仁勋发布 Groq 3 语言处理单元（LPU），这是 NVIDIA 于 2025 年 12 月以 **200 亿美元**收购 Groq 后的首款芯片。Groq 3 LPX 机架可容纳 256 个 LPU，与 Vera Rubin GPU 机架联合部署时，可将每瓦 Token 生成性能提升 **35 倍**，专为低延迟、大上下文智能体推理场景设计。预计 2026 年下半年出货。
+
+-   • 来源：CNBC / NVIDIA Newsroom | 日期：2026-03-16
+    
+-   • 链接：https://nvidianews.nvidia.com/news/nvidia-vera-rubin-platform
+    
+
+### NVIDIA 发布 NemoClaw 企业智能体平台和开源 Agent Toolkit
+
+黄仁勋将开源项目 OpenClaw 称为"人类历史上最受欢迎的开源项目"，并推出 NemoClaw 企业级参考栈，结合 Nemotron 模型和 OpenShell 开源运行时，一键安装即可为企业部署安全的 AI 智能体。Adobe、Salesforce、SAP、CrowdStrike 等 **16 家企业软件巨头**已采用该平台。黄仁勋强调："每家公司都需要有一个 OpenClaw 战略。"
+
+-   • 来源：NVIDIA Newsroom | 日期：2026-03-16
+    
+-   • 链接：https://nvidianews.nvidia.com/news/ai-agents
+    
+
+### NVIDIA 发布 DLSS 5——"图形学的 GPT 时刻"
+
+NVIDIA 发布 DLSS 5，首次引入"实时神经渲染"架构，通过端到端 AI 模型直接生成完整像素画面，被黄仁勋称为"自 2018 年实时光追以来计算机图形学最重大的突破"。该技术将于 2026 年秋季面向 RTX 50 系列推出，已获得腾讯、育碧、Bethesda 等 **30 余款游戏**适配支持。
+
+-   • 来源：Newegg Insider | 日期：2026-03-17
+    
+-   • 链接：https://www.newegg.com/insider/nvidia-gtc-2026-part-1-this-is-the-house-that-geforce-made-and-dlss-5-just-changed-everything/
+    
+
+### NVIDIA 预告 2028 年 Feynman 架构和 Kyber 机架设计
+
+黄仁勋预告了 2028 年的下一代 Feynman 架构（采用 TSMC A16 1.6nm 工艺），以及 Kyber 机架原型，采用垂直插入式计算托盘设计，将每机架 GPU 数量扩展至 144 个，用于 2027 年出货的 Vera Rubin Ultra 系统，展示了 NVIDIA 12 个月一代的加速迭代节奏。
+
+-   • 来源：Data Center Dynamics | 日期：2026-03-16
+    
+-   • 链接：https://www.datacenterdynamics.com/en/news/nvidia-updates-data-center-product-roadmap-following-lpu-launch-at-gtc-2026/
+    
+
+### NVIDIA 宣布自动驾驶新合作伙伴：比亚迪、现代、日产、吉利加入
+
+比亚迪、现代、日产和吉利正在 NVIDIA Drive Hyperion 平台上构建 L4 自动驾驶汽车，加上此前的奔驰、丰田和通用，该平台已覆盖每年 **1800 万辆**汽车产能。NVIDIA 还与 Uber 合作计划到 2028 年在全球 28 个城市部署自动驾驶出行服务。
+
+-   • 来源：NVIDIA Blog / CNBC | 日期：2026-03-16
+    
+-   • 链接：https://blogs.nvidia.com/blog/gtc-2026-news/
+    
+
+---
+
+## 二、大模型发布与技术突破
+
+### 小米发布 MiMo-V2 系列旗舰 AI 大模型，"Hunter Alpha"谜底揭晓
+
+小米正式发布 MiMo-V2-Pro、MiMo-V2-Omni 和 MiMo-V2-TTS 三款 AI 模型。此前在 OpenRouter 上匿名发布并引发全球猜测的"Hunter Alpha"模型被确认为小米 MiMo-V2-Pro（而非外界猜测的 DeepSeek V4）。该模型由前 DeepSeek 核心研究员罗福利领衔开发，**总参数超 1 万亿，活跃参数 42B**，支持 100 万 Token 上下文窗口，编码能力超越 Claude 4.6 Sonnet，API 定价仅为西方竞品的 **1/6 至 1/7**。
+
+-   • 来源：VentureBeat / The Japan Times | 日期：2026-03-18
+    
+-   • 链接：https://venturebeat.com/technology/xiaomi-stuns-with-new-mimo-v2-pro-llm-nearing-gpt-5-2-opus-4-6-performance
+    
+
+### Mistral AI 发布 Mistral Small 4 和开源代码代理 Leanstral
+
+法国 AI 公司 Mistral AI 发布 Mistral Small 4——集成指令、推理和编程能力的混合多模态模型，采用 MoE 架构（**1190 亿参数**），支持 256K 上下文窗口。同时开源的 Leanstral 是首个面向 Lean 4 形式验证的代码代理（Apache 2.0 许可证）。Mistral 还在 GTC 大会上推出了 Forge 企业模型训练平台。
+
+-   • 来源：Mistral AI 官方 / Releasebot | 日期：2026-03-17
+    
+-   • 链接：https://releasebot.io/updates/mistral
+    
+
+### DeepSeek V4 截至本周仍未发布，多个预期窗口已过
+
+DeepSeek V4 截至 3 月 23 日仍未正式发布。此前多方消息称 DeepSeek 计划在两会前发布 V4 多模态模型，但官方未确认。Manifold 预测市场上 DeepSeek V4 在 3 月内发布的概率已降至约 **10%**。3 月 11 日匿名出现的"Hunter Alpha"一度被广泛猜测为 V4，最终被证实为小米产品。
+
+-   • 来源：Taipei Times / Evolink.ai | 日期：2026-03-19
+    
+-   • 链接：https://www.taipeitimes.com/News/feat/archives/2026/03/19/2003854074
+    
+
+---
+
+## 三、AI 公司重大动态
+
+### OpenAI 计划年底前将员工翻倍至 8000 人
+
+据《金融时报》报道，OpenAI 计划将员工从目前 4500 人扩充至 **8000 人**，新增招聘集中在产品开发、工程、研究和销售领域，并大力招募"技术大使"帮助企业客户部署 AI 工具。OpenAI 最新融资轮估值已达 **8400 亿美元**，软银等参与了 1100 亿美元的超大规模融资。
+
+-   • 来源：CNBC（Reuters）| 日期：2026-03-21
+    
+-   • 链接：https://www.cnbc.com/2026/03/21/openai-to-nearly-double-workforce-to-8000-by-end-2026-ft-reports.html
+    
+
+### OpenAI 积极筹备 2026 年 IPO，ChatGPT 转型"生产力工具"
+
+OpenAI 应用部门 CEO Fidji Simo 在全体员工大会上表示公司正为可能在今年 Q4 的 IPO 做准备，ChatGPT 周活跃用户已超 **9 亿**，公司正从消费级聊天工具转向高生产力企业用例，同时计划将 ChatGPT、Codex 和浏览器合并为统一桌面超级应用。
+
+-   • 来源：CNBC | 日期：2026-03-17
+    
+-   • 链接：https://www.cnbc.com/2026/03/17/openai-preps-for-ipo-in-2026-says-chatgpt-must-be-productivity-tool.html
+    
+
+### Meta 与 Nebius 签署 270 亿美元 AI 基础设施协议
+
+Meta 与荷兰 AI 云计算公司 Nebius 签署五年期、总价 **270 亿美元**的 AI 基础设施协议，这将是 Vera Rubin 平台的首批大规模部署之一，支持 Meta 训练下一代 Llama 5 和 Llama 6 模型。消息公布后 Nebius 股价飙升 14%。
+
+-   • 来源：CNBC / Bloomberg | 日期：2026-03-16
+    
+-   • 链接：https://www.cnbc.com/2026/03/16/meta-nebius-ai-infrastructure.html
+    
+
+### IBM 完成 110 亿美元收购 Confluent，构建实时 AI 数据平台
+
+IBM 正式完成对数据流平台 Confluent 的收购，后者基于 Apache Kafka 服务超 6500 家企业（含 **40% 的财富 500 强**）。IBM 将其定位为智能体 AI 战略的关键拼图，提供实时、可信数据支持 AI 模型和智能体工作流。
+
+-   • 来源：IBM Newsroom | 日期：2026-03-17
+    
+-   • 链接：https://newsroom.ibm.com/2026-03-17-ibm-completes-acquisition-of-confluent,-making-real-time-data-the-engine-of-enterprise-ai-and-agents
+    
+
+### 微软缩减 Windows 11 上的 Copilot AI 集成
+
+微软宣布减少 Windows 11 中 Copilot AI 的集成入口，从 Photos、Widgets、Notepad 等应用开始缩减。Windows 执行副总裁 Pavan Davuluri 表示将更专注于"真正有用"的 AI 体验，这一"少即是多"策略可能反映了消费者对 AI 功能过载的反弹。
+
+-   • 来源：TechCrunch | 日期：2026-03-20
+    
+-   • 链接：https://techcrunch.com/2026/03/20/microsoft-rolls-back-some-of-its-copilot-ai-bloat-on-windows/
+    
+
+### 大英百科全书起诉 OpenAI 侵权
+
+大英百科全书对 OpenAI 提起诉讼，指控其在未经许可的情况下使用专有内容训练 AI 模型，AI 输出内容高度相似其原始材料。此案加入了出版商针对生成式 AI 的日益增长的版权诉讼行列。
+
+-   • 来源：Reuters | 日期：2026-03-16
+    
+
+---
+
+## 四、AI 治理、政策与法规
+
+### 特朗普政府发布首个国家 AI 立法框架
+
+3 月 20 日，白宫发布备受期待的国家 AI 立法框架，包含七大支柱：保护儿童、保障社区、尊重知识产权、防止审查、促进创新、发展劳动力、建立联邦统一标准。框架核心主张是用联邦法规**取代各州"拼凑式" AI 法规**，限制 AI 开发者的开放式法律责任，并倾向于认为用版权材料训练模型不违反版权法。白宫 AI 顾问 Michael Kratsios 表示希望年内立法。
+
+-   • 来源：NBC News / CNBC / White House | 日期：2026-03-20
+    
+-   • 链接：https://www.whitehouse.gov/articles/2026/03/president-donald-j-trump-unveils-national-ai-legislative-framework/
+    
+
+### 欧盟理事会就简化 AI 法案规则达成谈判立场
+
+欧盟理事会就修改 AI 法案达成谈判立场，主要变化包括：高风险 AI 系统规则的适用时间**推迟最多 16 个月**；新增禁止 AI 生成非自愿性亲密内容和儿童虐待材料的条款；将中小企业监管豁免扩展至小型中等规模企业。理事会主席国将开始与欧洲议会的三方谈判。
+
+-   • 来源：欧盟理事会官网 | 日期：2026-03-13
+    
+-   • 链接：https://www.consilium.europa.eu/en/press/press-releases/2026/03/13/council-agrees-position-to-streamline-rules-on-artificial-intelligence/
+    
+
+### 中国发布 OpenClaw 安全使用指南，限制政府机构安装
+
+中国国家互联网应急中心和中国互联网协会联合发布 OpenClaw 安全使用指导，建议在专用设备或虚拟机中安装 OpenClaw。此前国企和政府机构已被限制在办公设备上安装。但同时，深圳龙岗等地方政府仍推出高达 **200 万元**补贴政策吸引 OpenClaw 生态开发者，显示政策的"安全管控+产业扶持"并行思路。
+
+-   • 来源：人民日报海外版 / Bloomberg | 日期：2026-03-22
+    
+-   • 链接：http://en.people.cn/n3/2026/0323/c90000-20438534.html
+    
+
+---
+
+## 五、AI Agent 智能体生态
+
+### Anthropic 发布 Claude Code Channels——异步 AI 编程代理
+
+Anthropic 推出 Claude Code Channels 功能，开发者可通过 Discord 或 Telegram 直接向 Claude Code 发送编程指令，将开发者与 AI 代理的交互从同步模式转变为**异步自主合作模式**，无需专用硬件即可运行 AI 编程代理。
+
+-   • 来源：VentureBeat | 日期：2026-03-20
+    
+-   • 链接：https://venturebeat.com/orchestration/anthropic-just-shipped-an-openclaw-killer-called-claude-code-channels
+    
+
+### Meta 旗下 Manus 推出桌面应用——AI 智能体从云端走向本地
+
+Meta 于 2025 年 12 月以 **20 亿美元**收购的 AI 初创公司 Manus 推出桌面应用"My Computer"，让 AI 智能体在用户本地设备上执行文件整理、应用控制、代码开发等多步骤任务。每个操作需用户批准，定价 $20/月起，与免费开源的 OpenClaw 形成直接竞争。
+
+-   • 来源：CNBC | 日期：2026-03-18
+    
+-   • 链接：https://www.cnbc.com/2026/03/18/metas-manus-launches-desktop-app-to-bring-its-ai-agent-onto-personal-devices.html
+    
+
+### Meta 发布排序工程师智能体（REA），3 人完成 16 人工作量
+
+Meta 工程团队发布排序工程师智能体（REA），可自主执行广告排序模型的端到端机器学习生命周期。在首次生产部署中，REA 将模型精度提高 2 倍，**3 名工程师在 REA 驱动下完成了原本需要 16 名工程师**才能完成的 8 个模型改进任务。
+
+-   • 来源：Meta Engineering Blog | 日期：2026-03-17
+    
+-   • 链接：https://engineering.fb.com/2026/03/17/developer-tools/ranking-engineer-agent-rea-autonomous-ai-system-accelerating-meta-ads-ranking-innovation/
+    
+
+### Stripe 内部 AI 编程代理 Minions 每周产出 1300+ Pull Request
+
+Stripe 揭秘其内部自主编程代理 Minions，每周产出超过 **1300 个 PR**，全部代码由 AI 编写、人工审查。每个 Minion 在隔离的预热开发环境中运行，10 秒内启动，可自主编写代码、测试和文档。
+
+-   • 来源：Dev Weekly / Ajit Singh | 日期：2026-03-20
+    
+-   • 链接：https://singhajit.com/dev-weekly/2026/mar-16-22/nvidia-gtc-vera-rubin-stripe-minions-laravel-13-trivy-attack/
+    
+
+---
+
+## 六、中国 AI 生态
+
+### 腾讯发布 2025 年全年业绩，混元 3.0 将于 4 月发布
+
+腾讯发布 2025 年财报：全年营收 **7517.7 亿元**（同比+14%），经调整净利润 2596 亿元（同比+17%）。腾讯宣布混元 3.0 大模型将于 4 月发布，腾讯元宝月活突破 1 亿。刘炽平透露 2025 年 AI 新产品投入超 180 亿元，2026 年将至少翻倍。资本开支达 **792 亿元**创历史新高。
+
+-   • 来源：新浪财经 / 中国日报 | 日期：2026-03-18
+    
+-   • 链接：https://cn.chinadaily.com.cn/a/202603/19/WS69bba952a310942cc49a3f9f.html
+    
+
+### 华为中国合作伙伴大会 2026：发布 2 亿 AI 生态专项基金
+
+华为中国合作伙伴大会在深圳举行，宣布全面拥抱 AI，围绕鲲鹏和昇腾打造开放算力底座，昇腾 CANN 生态全量开源。华为云发布 **2 亿 AI 生态专项基金**，码道（CodeArts）代码智能体公测以来用户量增长 7 倍，已支持 160 多个 SOTA 模型开箱即用。高级副总裁李鹏指出"Token 经济时代已经到来"。
+
+-   • 来源：光明网 / 新浪新闻 | 日期：2026-03-19
+    
+-   • 链接：https://economy.gmw.cn/2026-03/19/content\_38658127.htm
+    
+
+### 黄仁勋力挺 OpenClaw，中国 AI 股票飙涨
+
+黄仁勋在 GTC 大会上称 OpenClaw 为"下一个 ChatGPT"，引发中国 AI 概念股大涨。MiniMax（稀宇科技）在港交所暴涨 **22%-29%** 创历史新高，智谱 AI 涨幅 14%-23%。穆迪报告称"中国对 AI 的快速采纳巩固了其作为全球领先 AI 市场之一的地位"。
+
+-   • 来源：CNBC / Bloomberg | 日期：2026-03-18
+    
+-   • 链接：https://www.cnbc.com/2026/03/18/china-ai-zhipu-minimax-after-nvidia-jensen-huang-openclaw-comments.html
+    
+
+### 腾讯将 OpenClaw 智能体集成到微信
+
+腾讯推出 ClawBoy 软件，将 OpenClaw AI 智能体以联系人形式集成到微信中，用户可通过消息界面发送和接收 AI 指令。同时围绕 OpenClaw 密集推出 WorkBuddy、QClaw 等"小龙虾"系列产品矩阵，可一键嵌入微信和企业微信。
+
+-   • 来源：PYMNTS | 日期：2026-03-22
+    
+-   • 链接：https://www.pymnts.com/artificial-intelligence-2/2026/tencent-adds-openclaw-ai-agent-to-chinas-most-popular-app/
+    
+
+### 中国各地推动"一人 AI 公司"补贴热潮
+
+中国各地方政府正将闲置数据中心改造为免费孵化器。上海浦东提供最高 **30 万元算力补贴**，武汉提供特殊贷款和违约损失兜底。这一运动与两会期间提出的 AI 经济扩展计划一脉相承。
+
+-   • 来源：Rest of World | 日期：2026-03-18
+    
+-   • 链接：https://restofworld.org/2026/china-ai-one-person-companies-incentives/
+    
+
+### 2026 中关村论坛年会人工智能主题日议程公布
+
+2026 中关村论坛年会将于 3 月 25-29 日在北京举办，AI 主题日设置"1+6+N"全矩阵活动：1 场 AI 开源前沿论坛、6 场专题论坛（涵盖投资、AI4S、通用 AI、芯片生态、脑机接口、人才教育）。月之暗面创始人杨植麟、智谱 AI CEO 张鹏等将出席，今年 AI 参赛项目数为去年的 **2.4 倍**。
+
+-   • 来源：人民网 / 光明网 | 日期：2026-03-23
+    
+-   • 链接：https://digital.gmw.cn/2026-03/23/content\_38662861.htm
+    
+
+---
+
+## 七、AI 与就业、行业研究
+
+### Carta 报告：AI 初创企业占 2025 年风投总额的 41%
+
+Carta 最新数据显示，AI 初创企业在 2025 年占据平台上 1280 亿美元风投融资总额的 **41%**，创历史最高年度份额。其中 10% 的初创企业占据了一半融资额。Carta 洞察负责人指出："AI 初创企业融资轮次更大，不是因为员工多，而是因为运行 AI 模型的成本很高。"
+
+-   • 来源：TechCrunch | 日期：2026-03-20
+    
+-   • 链接：https://techcrunch.com/2026/03/20/ai-startups-are-eating-the-venture-industry-and-the-returns-so-far-are-good/
+    
+
+### NVIDIA 发布 2026 年 AI 行业状态报告：86% 企业将增加 AI 预算
+
+NVIDIA 在 GTC 期间发布年度 AI 行业报告，覆盖 3200 名受访者。**86%** 的企业计划 2026 年增加 AI 预算；**44%** 的企业已在部署或评估 AI 智能体；电信行业智能体采用率最高（48%）。报告指出 AI 正从实验阶段进入规模化部署。
+
+-   • 来源：NVIDIA Blog | 日期：2026-03-17
+    
+-   • 链接：https://blogs.nvidia.com/blog/state-of-ai-report-2026/
+    
+
+### Atlassian 裁员 1600 人转型"AI 优先"，CTO 离职
+
+Atlassian 宣布裁员约 1600 人（占全球员工 10%），将资源投入 AI 开发和企业销售。CTO Rajeev Rajan 将于 3 月 31 日离职，由两位 AI 方向 CTO 接替。CEO 表示"AI 确实改变了我们需要的技能组合"。重组预计花费 **2.25-2.36 亿美元**。
+
+-   • 来源：Bloomberg / TechCrunch | 日期：2026-03-11
+    
+-   • 链接：https://www.bloomberg.com/news/articles/2026-03-11/atlassian-team-ceo-announces-layoffs-of-1-600-citing-ai-shift
+    
+
+### 美国能源部宣布 2.93 亿美元"创世纪计划"AI 研究资助
+
+美国能源部发布"创世纪计划：用 AI 变革科学与能源"资助申请，总资金规模达 **2.93 亿美元**，邀请跨学科团队利用 AI 解决先进制造、生物技术、核能和量子科学等 21 个领域的国家级挑战。
+
+-   • 来源：美国能源部 | 日期：2026-03-17
+    
+-   • 链接：https://www.energy.gov/articles/energy-department-announces-293-million-funding-support-genesis-mission-national-science
+    
+
+---
+
+## 本周总结
+
+**智能体 AI 时代正式到来。** 本周最鲜明的信号是，从 NVIDIA GTC 的"Agentic AI 拐点已至"到 OpenClaw 的全球爆发、从 Meta Manus 桌面版到腾讯微信集成、从 Stripe Minions 到 Anthropic Claude Code Channels，AI 正在从"对话工具"向"自主行动者"进行根本性转变。
+
+**AI 基础设施军备竞赛加剧。** NVIDIA 万亿美元订单管线、Meta 270 亿美元 Nebius 协议、IBM 110 亿美元收购 Confluent，以及华为 2 亿生态基金，资本以前所未有的规模涌入 AI 基础设施。黄仁勋将其称为"人类历史上最大规模的基础设施建设"。
+
+**中美 AI 治理路径分化。** 美国推出联邦统一轻监管框架试图取代州法规拼凑；欧盟延长高风险 AI 合规时间表；中国则采取"安全管控+产业补贴"并行策略。三大经济体同步推进 AI 治理，但方向各异。
+
+**中国 AI 生态实力凸显。** 小米 MiMo-V2 以匿名形式惊艳全球、腾讯元宝月活破亿、华为昇腾全量开源、地方政府动员式 AI 补贴——中国 AI 产业正在从"追赶者"向"并跑者"加速转变。本周 OpenRouter 数据显示中国模型 Token 消耗已首超美国，标志着一个新的竞争格局正在形成。
